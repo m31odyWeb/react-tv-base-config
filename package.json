@@ -3,10 +3,10 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"start": "react-scripts start",
-		"build": "react-scripts build",
-		"test": "react-scripts test",
-		"eject": "react-scripts eject",
+		"start": "craco start",
+		"build": "craco build",
+		"test": "craco test",
+		"eject": "craco eject",
 		"lint:es": "eslint --ext .js,.ts,.jsx,.tsx,.json src",
 		"lint:es:fix": "npm run lint:css -- --fix",
 		"lint:es:stage": "eslint --ext .js,.ts,.jsx,.tsx,.json --config ./.eslintrc-stage.json src",
@@ -53,6 +53,7 @@
 		"web-vitals": "^2.1.4"
 	},
 	"devDependencies": {
+		"@craco/craco": "^7.0.0",
 		"@typescript-eslint/eslint-plugin": "^5.46.1",
 		"@typescript-eslint/parser": "^5.46.1",
 		"eslint": "^8.29.0",
