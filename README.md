@@ -54,7 +54,7 @@
     - Press `Add custom device` button and create device with 1920 x 1080 resolution;
     > ![Device creating UI image](readme_assets/emulated-devices.png)
 
-3. Eneble `Toggle device toolbar`;
+3. Enable `Toggle device toolbar`;
     > ![Toolbar image](readme_assets/device-toolbar.png)
 
 4. Select created device;
