@@ -1,6 +1,6 @@
-# Project template for Tizen Web Apps based on ReactJS.
+# Project template for [Tizen Web Apps](https://docs.tizen.org/application/web/index) based on ReactJS.
 
-#### This template base includes:
+#### This template includes:
 
 - [Typescritpt](https://www.npmjs.com/package/typescript);
 - [Create react app](https://www.npmjs.com/package/create-react-app);
@@ -9,7 +9,6 @@
 - [ESlint](https://www.npmjs.com/package/eslint), [Prettier](https://www.npmjs.com/package/prettier), [StyleLint](https://www.npmjs.com/package/stylelint), [Editor config](https://editorconfig.org/), [husky](https://www.npmjs.com/package/husky) and [LintStaged](https://www.npmjs.com/package/lint-staged);
 
 #### Related packages:
-
 - [Sass](https://www.npmjs.com/package/sass);
 - [TizenTV web api](https://www.npmjs.com/package/tizen-tv-webapis);
 - [@noriginmedia/norigin-spatial-navigation](https://www.npmjs.com/package/@noriginmedia/norigin-spatial-navigation);
@@ -17,7 +16,7 @@
 - [classnames](https://www.npmjs.com/package/classnames);
 - [react-route-dom](https://reactrouter.com/en/main);
 
-## Availeble scripts:
+## Available scripts:
 
 `npm start` - to start project in develompent mode;
 
@@ -31,37 +30,35 @@
 
 ## Configaration files:
 
-`craco.config.ts` - for configuring **React** application;
+`craco.config.ts` - for configuring __React__ application;
 
-`tsconfig.json` - for configuring **typescript**;
+`tsconfig.json` - for configuring __typescript__;
 
 `.witsconfig.json` - for configuring remote running and debugging;
 
-`.eslintrc.json, .eslintrc-stage.json` - for configuring **ESLint** for development and stage;
+`.eslintrc.json, .eslintrc-stage.json` - for configuring __ESLint__ for development and stage;
 
-`.stylelintrc.json, .stylelintrc-stage.json` - for configuring **StyleLint** for development and stage;
+`.stylelintrc.json, .stylelintrc-stage.json` - for configuring __StyleLint__ for development and stage;
 
-`.prettierrc` - for configuring **prettier** for development and stage;
+`.prettierrc` - for configuring __prettier__ for development and stage;
 
-`.editorconfig` - for configuring **Editor config**;
+`.editorconfig` - for configuring __Editor config__;
 
 ## Development and debugging in browser:
 
 1. Open `Developer tools`;
 
 2. Create emulated device:
+    
+    - Go to `Developer tools` -> `Settings` -> `Devices`;
+    - Press `Add custom device` button and create device with 1920 x 1080 resolution;
+    > ![Device creating UI image](readme_assets/emulated-devices.png)
 
-   - Go to `Developer tools` -> `Settings` -> `Devices`;
-   - Press `Add custom device` button and create device with 1920 x 1080 resolution;
-     > ![Device creating UI image](readme_assets/emulated-devices.png)
-
-3. Enable `Toggle device toolbar`;
-
-   > ![Toolbar image](readme_assets/device-toolbar.png)
+3. Eneble `Toggle device toolbar`;
+    > ![Toolbar image](readme_assets/device-toolbar.png)
 
 4. Select created device;
-
-   > ![Selecting device image](readme_assets/select-device.png)
+    > ![Selecting device image](readme_assets/select-device.png)
 
 5. You are ready to development :)
 
@@ -69,34 +66,34 @@
 
 Creating focusable components:
 
-### **<Focusable/>**
+### __<Focusable/>__
 
-For creating component focusable use **`<Focusable/>`** component.
+For creating component focusable use __`<Focusable/>`__ component. 
 
 This component create focusable wrapper for you.
 
-#### **`<Focusable>`** component interface:
+#### __`<Focusable>`__ component interface:
 
     interface IProps extends UseFocusableConfig {
-        as?: any;
-        className?: string;
-        focusedClassName?: string;
-        defaultFocused?: boolean;
-        children?: ReactNode | Array<ReactNode>;
-        style?: CSSProperties;
+	    as?: any;
+	    className?: string;
+	    focusedClassName?: string;
+	    defaultFocused?: boolean;
+	    children?: ReactNode | Array<ReactNode>;
+	    style?: CSSProperties;
     }
 
-**`as?: any`** - specify this property to explicitly specify a **`tag`** for the generated wrapper.
+__`as?: any`__ - specify this property to explicitly specify a __`tag`__ for the generated wrapper. 
 
-**Default:** `"div"`.
+__Default:__ `"div"`.
 
-**Available:** any `HTML5` tag specified as a `string`. If you want to specify a tag that doesn't require closing, use the following syntax:
+__Available:__ any `HTML5` tag specified as a `string`. If you want to specify a tag that doesn't require closing, use the following syntax: 
 
 ```
 <Focusable as='img' />`
 ```
 
-> **Don't use** this syntax for unclosed tags( `img`,`hr` etc. ):
+> __Don't use__ this ⬇️ syntax for unclosed tags( `img`,`hr` etc. ): 
 
 ```
 <Focusable as="img">...</Focusable>
@@ -104,78 +101,79 @@ This component create focusable wrapper for you.
 
 `className?: string` - `className` prop.
 
-**Default:** `''`
+__Default:__ `''`
 
 `focusedClassName?: string` - `className` prop for focused element.
 
-**Default:** `'focused'`
+__Default:__ `'focused'`
 
-`defaultFocused?: boolean` -
+`defaultFocused?: boolean` - 
 a property indicating whether the element will have focus on the first render.
 
-**Default:** `false`
+__Default:__ `false`
 
 `style?: CSSProperties` - React `style` attribute.
 
 `children?: ReactNode | Array<ReactNode>` - child nodes. Don't use this as prop.
 
-`UseFocusableConfig?` - props for [`useFocusable`](https://github.com/NoriginMedia/norigin-spatial-navigation#usefocusable-hook) hook;
+`UseFocusableConfig?` - props for [`useFocusable`](https://github.com/NoriginMedia/norigin-spatial-navigation#usefocusable-hook) hook; 
 
-### **<FocusableContainer/>**
+### __<FocusableContainer/>__
 
-For creating focusable container use **`<FocusableContainer>...</FocusableContainer>`** component.
+For making container focusable use __`<FocusableContainer>...</FocusableContainer>`__ component. 
 
-This component create focusable container for you **`<Focusable/>`** components.
+This component create focusable container for you __`<Focusable/>`__ components.
 
-#### **`<FocusableContainer>`** component interface:
+#### __`<FocusableContainer>`__ component interface:
 
     interface IProps extends UseFocusableConfig {
-        children: ReactNode | Array<ReactNode>;
+	    children: ReactNode | Array<ReactNode>;
     	as?: any;
-        className?: string;
-        hasFocusedChildClassName?: string;
-        defaultFocused?: boolean;
-        style?: CSSProperties;
+	    className?: string;
+	    hasFocusedChildClassName?: string;
+	    defaultFocused?: boolean;
+	    style?: CSSProperties;
     }
 
-**`as?: any`** - specify this property to explicitly specify a **`tag`** for the generated wrapper.
 
-**Default:** `"div"`.
+__`as?: any`__ - specify this property to explicitly specify a __`tag`__ for the generated wrapper. 
 
-**Available:** any `HTML5` closing tag specified as a `string`.
+__Default:__ `"div"`.
 
-> **Don't use** this unclosed tags ( `img`,`hr` etc. ) for this component.
+__Available:__ any `HTML5` closing tag specified as a `string`.
+
+> __Don't use__ unclosed tags ( `img`,`hr` etc. ) for this component. 
 
 `className?: string` - `className` prop.
 
-**Default:** `''`
+__Default:__ `''`
 
-`hasFocusedChildClassName?: string` - `className` prop when container has focused children.
+`hasFocusedChildClassName?: string` - `className` prop will be added  when container has focused children.
 
-**Default:** `''`
+__Default:__ `''`
 
-`defaultFocused?: boolean` -
+`defaultFocused?: boolean` - 
 a property indicating whether the element will have focus on the first render.
 
-**Default:** `false`
+__Default:__ `false`
 
 `style?: CSSProperties` - React `style` attribute.
 
 `children?: ReactNode | Array<ReactNode>` - child nodes. Don't use this as prop.
 
-`UseFocusableConfig?` - props for [`useFocusable`](https://github.com/NoriginMedia/norigin-spatial-navigation#usefocusable-hook) hook;
+`UseFocusableConfig?` - props for [`useFocusable`](https://github.com/NoriginMedia/norigin-spatial-navigation#usefocusable-hook) hook; 
 
 ### <FocusProvider />
 
-This component wrapping you application and provides **`useFocusContext`** hook.
+This component wrapping you application and provides __`useFocusContext`__ hook.
 
-**`useFocusContext`** - hook take you possibility for managing focus in any component.
+__`useFocusContext`__ - hook take you possibility for managing focus in any component.
 
 Hook output decribed [here](https://github.com/NoriginMedia/norigin-spatial-navigation#hook-output).
 
-**Using:**
+__Using:__
 
-Call **`useFocusContext`** in any place of your application. Hook was return you result decribed [here](https://github.com/NoriginMedia/norigin-spatial-navigation#hook-output).
+Call __`useFocusContext`__ in any place of your application. Hook return to you result decribed [here](https://github.com/NoriginMedia/norigin-spatial-navigation#hook-output).
 
 - Use `setFocus` method to manually set the focus to a component providing its `focusKey`.
 
