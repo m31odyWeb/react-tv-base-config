@@ -2,19 +2,19 @@
 
 #### This template includes:
 
-- [Typescritpt](https://www.npmjs.com/package/typescript);
-- [Create react app](https://www.npmjs.com/package/create-react-app);
-- [Craco](https://www.npmjs.com/package/@craco/craco);
-- [@tize-tv/wits](https://github.com/Samsung/Wits);
+- [TypeScript](https://www.npmjs.com/package/typescript);
+- [create-react-app](https://www.npmjs.com/package/create-react-app);
+- [@craco/craco](https://www.npmjs.com/package/@craco/craco);
+- [@tizen-tv/wits](https://github.com/Samsung/Wits);
 - [ESlint](https://www.npmjs.com/package/eslint), [Prettier](https://www.npmjs.com/package/prettier), [StyleLint](https://www.npmjs.com/package/stylelint), [Editor config](https://editorconfig.org/), [husky](https://www.npmjs.com/package/husky) and [LintStaged](https://www.npmjs.com/package/lint-staged);
 
 #### Related packages:
-- [Sass](https://www.npmjs.com/package/sass);
-- [TizenTV web api](https://www.npmjs.com/package/tizen-tv-webapis);
-- [@noriginmedia/norigin-spatial-navigation](https://www.npmjs.com/package/@noriginmedia/norigin-spatial-navigation);
+- [sass](https://www.npmjs.com/package/sass);
 - [axios](https://www.npmjs.com/package/axios);
 - [classnames](https://www.npmjs.com/package/classnames);
 - [react-route-dom](https://reactrouter.com/en/main);
+- [tizen-tv-webapis](https://www.npmjs.com/package/tizen-tv-webapis);
+- [@noriginmedia/norigin-spatial-navigation](https://www.npmjs.com/package/@noriginmedia/norigin-spatial-navigation);
 
 ## Available scripts:
 
