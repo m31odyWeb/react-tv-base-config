@@ -9,7 +9,7 @@ interface IProps extends UseFocusableConfig {
 	as?: any;
 	className?: string;
 	focusedClassName?: string;
-	focusedDefault?: boolean;
+	defaultFocused?: boolean;
 	children?: ReactNode | Array<ReactNode>;
 	style?: CSSProperties;
 }
@@ -20,17 +20,17 @@ export const Focusable: FC<IProps> = ({
 	as = 'div',
 	className = '',
 	focusedClassName = GLOBAL_FOCUSED_CLASS_NAME,
-	focusedDefault = false,
+	defaultFocused = false,
 	...focusableConfig
 }) => {
 	const Element = as;
 	const { ref, focused, focusSelf } = useFocusable(focusableConfig);
 
 	useEffect(() => {
-		if (focusedDefault) {
+		if (defaultFocused) {
 			focusSelf();
 		}
-	}, [focusSelf, focusedDefault]);
+	}, [focusSelf, defaultFocused]);
 
 	return (
 		<Element

@@ -1,46 +1,186 @@
-# Getting Started with Create React App
+# Project template for Tizen Web Apps based on ReactJS.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### This template base includes:
 
-## Available Scripts
+- [Typescritpt](https://www.npmjs.com/package/typescript);
+- [Create react app](https://www.npmjs.com/package/create-react-app);
+- [Craco](https://www.npmjs.com/package/@craco/craco);
+- [@tize-tv/wits](https://github.com/Samsung/Wits);
+- [ESlint](https://www.npmjs.com/package/eslint), [Prettier](https://www.npmjs.com/package/prettier), [StyleLint](https://www.npmjs.com/package/stylelint), [Editor config](https://editorconfig.org/), [husky](https://www.npmjs.com/package/husky) and [LintStaged](https://www.npmjs.com/package/lint-staged);
 
-In the project directory, you can run:
+#### Related packages:
+- [Sass](https://www.npmjs.com/package/sass);
+- [TizenTV web api](https://www.npmjs.com/package/tizen-tv-webapis);
+- [@noriginmedia/norigin-spatial-navigation](https://www.npmjs.com/package/@noriginmedia/norigin-spatial-navigation);
+- [axios](https://www.npmjs.com/package/axios);
+- [classnames](https://www.npmjs.com/package/classnames);
+- [react-route-dom](https://reactrouter.com/en/main);
 
-### `npm start`
+## Availeble scripts:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+`npm start` - to start project in develompent mode;
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+`npm start:tv` - to start project in develompent mode remote on TV with hot reaload;
 
-### `npm test`
+`npm run build` - to build project;
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`lint:es:fix` - to fix JS and TS problems;
 
-### `npm run build`
+`lint:css:fix` - to fix CSS and SCSS problems;
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Configaration files:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`craco.config.ts` - for configuring __React__ application;
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`tsconfig.json` - for configuring __typescript__;
 
-### `npm run eject`
+`.witsconfig.json` - for configuring remote running and debugging;
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+`.eslintrc.json, .eslintrc-stage.json` - for configuring __ESLint__ for development and stage;
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`.stylelintrc.json, .stylelintrc-stage.json` - for configuring __StyleLint__ for development and stage;
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+`.prettierrc` - for configuring __prettier__ for development and stage;
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+`.editorconfig` - for configuring __Editor config__;
 
-## Learn More
+## Development and debugging in browser:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Open `Developer tools`;
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Create emulated device:
+    
+    - Go to `Developer tools` -> `Settings` -> `Devices`;
+    - Press `Add custom device` button and create device with 1920 x 1080 resolution;
+    > [Device creating UI image](./readme_assets/emulated-devices)
+
+3. Eneble `Toggle device toolbar`;
+    > [Toolbar image](./readme_assets/toolbar-image.png)
+
+4. Select created device;
+    > [Selecting device image](./readme_assets/select-device.png)
+
+5. You are ready to development :)
+
+## Development:
+
+Creating focusable components:
+
+### __<Focusable/>__
+
+For creating component focusable use __`<Focusable/>`__ component. 
+
+This component create focusable wrapper for you.
+
+#### __`<Focusable>`__ component interface:
+
+    interface IProps extends UseFocusableConfig {
+	    as?: any;
+	    className?: string;
+	    focusedClassName?: string;
+	    defaultFocused?: boolean;
+	    children?: ReactNode | Array<ReactNode>;
+	    style?: CSSProperties;
+    }
+
+__`as?: any`__ - specify this property to explicitly specify a __`tag`__ for the generated wrapper. 
+
+__Default:__ `"div"`.
+
+__Available:__ any `HTML5` tag specified as a `string`. If you want to specify a tag that doesn't require closing, use the following syntax: 
+
+```
+<Focusable as='img' />`
+```
+
+> __Don't use__ this syntax for unclosed tags( `img`,`hr` etc. ): 
+
+```
+<Focusable as="img">...</Focusable>
+```
+
+`className?: string` - `className` prop.
+
+__Default:__ `''`
+
+`focusedClassName?: string` - `className` prop for focused element.
+
+__Default:__ `'focused'`
+
+`defaultFocused?: boolean` - 
+a property indicating whether the element will have focus on the first render.
+
+__Default:__ `false`
+
+`style?: CSSProperties` - React `style` attribute.
+
+`children?: ReactNode | Array<ReactNode>` - child nodes. Don't use this as prop.
+
+`UseFocusableConfig?` - props for [`useFocusable`](https://github.com/NoriginMedia/norigin-spatial-navigation#usefocusable-hook) hook; 
+
+### __<FocusableContainer/>__
+
+For creating focusable container use __`<FocusableContainer>...</FocusableContainer>`__ component. 
+
+This component create focusable container for you __`<Focusable/>`__ components.
+
+#### __`<FocusableContainer>`__ component interface:
+
+    interface IProps extends UseFocusableConfig {
+	    children: ReactNode | Array<ReactNode>;
+    	as?: any;
+	    className?: string;
+	    hasFocusedChildClassName?: string;
+	    defaultFocused?: boolean;
+	    style?: CSSProperties;
+    }
+
+
+__`as?: any`__ - specify this property to explicitly specify a __`tag`__ for the generated wrapper. 
+
+__Default:__ `"div"`.
+
+__Available:__ any `HTML5` closing tag specified as a `string`.
+
+> __Don't use__ this unclosed tags ( `img`,`hr` etc. ) for this component. 
+
+`className?: string` - `className` prop.
+
+__Default:__ `''`
+
+`hasFocusedChildClassName?: string` - `className` prop when container has focused children.
+
+__Default:__ `''`
+
+`defaultFocused?: boolean` - 
+a property indicating whether the element will have focus on the first render.
+
+__Default:__ `false`
+
+`style?: CSSProperties` - React `style` attribute.
+
+`children?: ReactNode | Array<ReactNode>` - child nodes. Don't use this as prop.
+
+`UseFocusableConfig?` - props for [`useFocusable`](https://github.com/NoriginMedia/norigin-spatial-navigation#usefocusable-hook) hook; 
+
+### <FocusProvider />
+
+This component wrapping you application and provides __`useFocusContext`__ hook.
+
+__`useFocusContext`__ - hook take you possibility for managing focus in any component.
+
+Hook output decribed [here](https://github.com/NoriginMedia/norigin-spatial-navigation#hook-output).
+
+__Using:__
+
+Call __`useFocusContext`__ in any place of your application. Hook was return you result decribed [here](https://github.com/NoriginMedia/norigin-spatial-navigation#hook-output).
+
+- Use `setFocus` method to manually set the focus to a component providing its `focusKey`.
+
+- Use `getCurrentFocusKey` method to get the currently focused component's focus key.
+
+- Use `navigateByDirection(direction: string, focusDetails: FocusDetails)` method to manually navigation to a certain direction.
+
+- Use `pause` method to pause all the key event handlers.
+
+- Use `resume` method to resume all the key event handlers.
