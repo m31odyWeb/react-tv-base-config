@@ -1,0 +1,29 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	overflow: hidden;
+	font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+		'Helvetica Neue', sans-serif;
+	background-color: #eee;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+button {
+	background: none;
+	border: none;
+	outline: none;
+}
+
+.focused {
+	border: 8px solid #ff8;
+}
+
+.container_focused {
+	background-color: #ffd;
+	transition: background-color 1300ms cubic-bezier(0.19, 1, 0.22, 1);
+}

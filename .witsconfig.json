@@ -1,0 +1,12 @@
+{
+	"connectionInfo": {
+		"deviceIp": "0.0.0.0",
+		"hostIp": "192.168.31.119",
+		"socketPort": 7685,
+		"width": "1920",
+		"isDebugMode": true
+	},
+	"profileInfo": {
+		"path": "/home/m31ody/ProjectsRefactoring/aloula-tv-tizen/node_modules/@tizentv/wits/resource/profiles.xml"
+	}
+}

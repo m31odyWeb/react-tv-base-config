@@ -1,0 +1,15 @@
+// Function for converting "dp" to "vw"
+
+@function w-dp($value) {
+	$result: $value / 640 * 100vw;
+
+	@return $result;
+}
+
+// Function for converting "dp" to "vh"
+
+@function h-dp($value) {
+	$result: $value / 360 * 100vh;
+
+	@return $result;
+}
