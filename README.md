@@ -64,11 +64,11 @@
 
 ## Development:
 
-Creating focusable components:
+__Creating focusable components:__
 
-### __<Focusable/>__
+### \<Focusable/>
 
-For creating component focusable use __`<Focusable/>`__ component. 
+For making component focusable use __`<Focusable/>`__ component. 
 
 This component create focusable wrapper for you.
 
@@ -118,7 +118,7 @@ a property indicating whether the element will have focus on the first render.
 
 `UseFocusableConfig?` - props for [`useFocusable`](https://github.com/NoriginMedia/norigin-spatial-navigation#usefocusable-hook) hook; 
 
-### __<FocusableContainer/>__
+### \<FocusableContainer/>
 
 For making container focusable use __`<FocusableContainer>...</FocusableContainer>`__ component. 
 
@@ -127,8 +127,8 @@ This component create focusable container for you __`<Focusable/>`__ components.
 #### __`<FocusableContainer>`__ component interface:
 
     interface IProps extends UseFocusableConfig {
+	    as?: any;
 	    children: ReactNode | Array<ReactNode>;
-    	as?: any;
 	    className?: string;
 	    hasFocusedChildClassName?: string;
 	    defaultFocused?: boolean;
@@ -163,7 +163,7 @@ a property indicating whether the element will have focus on the first render.
 
 `UseFocusableConfig?` - props for [`useFocusable`](https://github.com/NoriginMedia/norigin-spatial-navigation#usefocusable-hook) hook; 
 
-### <FocusProvider />
+### \<FocusProvider />
 
 This component wrapping you application and provides __`useFocusContext`__ hook.
 
