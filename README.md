@@ -57,7 +57,7 @@
 
 3. Enable `Toggle device toolbar`;
 
-   > ![Toolbar image](readme_assets/toolbar-image.png)
+   > ![Toolbar image](readme_assets/device-toolbar.png)
 
 4. Select created device;
 
