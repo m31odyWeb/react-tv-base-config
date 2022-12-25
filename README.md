@@ -85,9 +85,9 @@ This component create focusable wrapper for you.
 
 __`as?: any`__ - specify this property to explicitly specify a __`tag`__ for the generated wrapper. 
 
-__Default:__ `"div"`.
+> __Default:__ `"div"`.
 
-__Available:__ any `HTML5` tag specified as a `string`. If you want to specify a tag that doesn't require closing, use the following syntax: 
+>__Available:__ any `HTML5` tag specified as a `string`. If you want to specify a tag that doesn't require closing, use the following syntax: 
 
 ```
 <Focusable as='img' />`
@@ -101,16 +101,16 @@ __Available:__ any `HTML5` tag specified as a `string`. If you want to specify a
 
 `className?: string` - `className` prop.
 
-__Default:__ `''`
+>__Default:__ `''`
 
 `focusedClassName?: string` - `className` prop for focused element.
 
-__Default:__ `'focused'`
+>__Default:__ `'focused'`
 
 `defaultFocused?: boolean` - 
 a property indicating whether the element will have focus on the first render.
 
-__Default:__ `false`
+>__Default:__ `false`
 
 `style?: CSSProperties` - React `style` attribute.
 
@@ -138,24 +138,24 @@ This component create focusable container for you __`<Focusable/>`__ components.
 
 __`as?: any`__ - specify this property to explicitly specify a __`tag`__ for the generated wrapper. 
 
-__Default:__ `"div"`.
+>__Default:__ `"div"`.
 
-__Available:__ any `HTML5` closing tag specified as a `string`.
+>__Available:__ any `HTML5` closing tag specified as a `string`.
 
 > __Don't use__ unclosed tags ( `img`,`hr` etc. ) for this component. 
 
 `className?: string` - `className` prop.
 
-__Default:__ `''`
+>__Default:__ `''`
 
 `hasFocusedChildClassName?: string` - `className` prop will be added  when container has focused children.
 
-__Default:__ `''`
+>__Default:__ `''`
 
 `defaultFocused?: boolean` - 
 a property indicating whether the element will have focus on the first render.
 
-__Default:__ `false`
+>__Default:__ `false`
 
 `style?: CSSProperties` - React `style` attribute.
 
