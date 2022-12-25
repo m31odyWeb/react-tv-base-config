@@ -175,7 +175,7 @@ __Using:__
 
 Call __`useFocusContext`__ in any place of your application. Hook return to you result decribed [here](https://github.com/NoriginMedia/norigin-spatial-navigation#hook-output).
 
-- Use `setFocus` method to manually set the focus to a component providing its `focusKey`.
+- Use `setFocus(focusKey: string)` method to manually set the focus to a component providing its `focusKey`.
 
 - Use `getCurrentFocusKey` method to get the currently focused component's focus key.
 
